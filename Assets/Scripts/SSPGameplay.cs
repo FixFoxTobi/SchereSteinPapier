@@ -11,11 +11,12 @@ using System.IO;
 
 public class SSPGameplay : MonoBehaviour
 {
-    private const string ACCESS_KEY = "uhknZenrbtpoOam54h1U7rs3hpXQJXetrcRlDRIY3cNkrvYbrPFCVA=="; // AccessKey obtained from Picovoice Console (https://console.picovoice.ai/)
+    private const string ACCESS_KEY = "$YOUR_ACCESS_KEY"; // AccessKey obtained from Picovoice Console (https://console.picovoice.ai/)
 
-    static List<string> keywordPaths = new List<string>() { "C:/Users/FixFox/Downloads/SSP_Files/Schere-Stein-Papier_de_windows_v3_0_0.ppn" }; // Liste mit Pfad zu allen erkennbaren Keywords/Wakewords
+    private static string basePath = Application.dataPath;
+    private static List<string> keywordPaths = new List<string>() { Path.Combine(basePath, "/Assets/PorcupineFiles/Schere-Stein-Papier_de_windows_v3_0_0.ppn") }; // Liste mit Pfad zu allen erkennbaren Keywords/Wakewords
 
-    private const string modelPath = "C:/Users/FixFox/Downloads/SSP_Files/porcupine_params_de.pv"; // Pfad zum Deutschsprachigen Model
+    private string modelPath = Path.Combine(Application.dataPath, "/Assets/PorcupineFiles/porcupine_params_de.pv"); // Pfad zum Deutschsprachigen Model
 
     PorcupineManager _porcupineManager;
 
@@ -43,6 +44,8 @@ public class SSPGameplay : MonoBehaviour
     void Start()
     {
         leapController = new Controller();
+
+        outputText.text = basePath + ", " + keywordPaths + ", " + modelPath;
 
         if (gestureText == null)
         {
