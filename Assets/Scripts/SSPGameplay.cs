@@ -11,7 +11,7 @@ using System.IO;
 
 public class SSPGameplay : MonoBehaviour
 {
-    private const string ACCESS_KEY = "$YOUR_ACCESS_KEY"; // AccessKey obtained from Picovoice Console (https://console.picovoice.ai/)
+    private const string ACCESS_KEY = "${YOUR_ACCESS_KEY_HERE}"; // AccessKey obtained from Picovoice Console (https://console.picovoice.ai/)
 
     private static string basePath = Application.dataPath;
     private static List<string> keywordPaths = new List<string>() { basePath + "/PorcupineFiles/Schere-Stein-Papier_de_windows_v3_0_0.ppn"}; // Liste mit Pfad zu allen erkennbaren Keywords/Wakewords
@@ -27,16 +27,21 @@ public class SSPGameplay : MonoBehaviour
     enum Gesture { Rock, Paper, Scissors, None }
     private Gesture currentGesture = Gesture.None;
     private Gesture botGesture = Gesture.None;
-
     public Frame frame;
 
+    // Textfelder
     public TMP_Text gestureText;
     public TMP_Text botText;
     public TMP_Text matchPoints;
     public TMP_Text outputText;
+    
+    // Bildschirm ausgabe
+    public Texture[] _imgs;
+    public GameObject screen;
 
     private int playerPoints = 0;
     private int botPoints = 0;
+    private int emotionalState = 0;
 
     private System.Random random = new System.Random(); 
 
@@ -45,6 +50,10 @@ public class SSPGameplay : MonoBehaviour
     {
         leapController = new Controller();
 
+        if (_imgs == null || screen == null)
+        {
+            Debug.LogError("Screen and image component not assigned!");
+        }
         if (gestureText == null)
         {
             Debug.LogError("TMP Text component is not assigned!");
@@ -60,6 +69,18 @@ public class SSPGameplay : MonoBehaviour
         if (outputText == null)
         {
             Debug.LogError("TMP Text component is not assigned!");
+        }
+
+        Renderer planeRenderer = screen.GetComponent<Renderer>();
+
+        if (planeRenderer != null)
+        {
+            // Textur des Screens auf das Default Bild setzen
+            planeRenderer.material.mainTexture = _imgs[1];
+        }
+        else
+        {
+            Debug.LogError("Screen has no Renderer!");
         }
 
         try
@@ -188,18 +209,23 @@ public class SSPGameplay : MonoBehaviour
         if (currentGesture == botGesture)
         {
             outputText.text = "TIE";
+            StartCoroutine(DisplayBotChoice(botGesture, 0));
         }
         else if ((currentGesture == Gesture.Rock && botGesture == Gesture.Paper) || (currentGesture == Gesture.Paper && botGesture == Gesture.Scissors) || (currentGesture == Gesture.Scissors && botGesture == Gesture.Rock))
         {
             botPoints++;
             outputText.text = "BOT POINT";
             matchPoints.text = playerPoints + ":" + botPoints;
+            emotionalState++;
+            StartCoroutine(DisplayBotChoice(botGesture, 1));
         }
         else
         {
             playerPoints++;
             outputText.text = "PLAYER POINT";
             matchPoints.text = playerPoints + ":" + botPoints;
+            emotionalState--;
+            StartCoroutine(DisplayBotChoice(botGesture, -1));
         }
         Invoke("TextReset", 1.5f); // Timer mit 1,5 Sekunden
     }
@@ -207,6 +233,7 @@ public class SSPGameplay : MonoBehaviour
     private void TextReset() // Text nach abgelaufener Zeit wieder zurücksetzen
     {
         gestureText.text = " ";
+        outputText.text = " ";
         botText.text = " ";
     }
 
@@ -217,6 +244,75 @@ public class SSPGameplay : MonoBehaviour
         return (Gesture)randomIndex; // Gib die entsprechende Geste zurück
     }
 
+    private IEnumerator DisplayBotChoice(Gesture gesture, int botWin)
+    {
+        switch (gesture)
+        {
+            case Gesture.Rock:
+                SetFace(5);
+                break;
+            case Gesture.Paper:
+                SetFace(6);
+                break;
+            case Gesture.Scissors:
+                SetFace(4);
+                break;
+        }
+
+        yield return new WaitForSeconds(1.5f);
+
+        // Check ob es einen gewinner gibt
+        wincheck();
+
+        // setzte das gesicht je nachdem wie es steht
+        if (botWin == 1)
+        {
+            SetFace(1); // glücklich
+        }
+        else if (botWin == -1)
+        {
+            switch(emotionalState)
+            {
+                case < -1:
+                    SetFace(3); // wütend
+                    break;
+                case 0:
+                    SetFace(2); // neutral
+                    break;
+                case -1:
+                    SetFace(2); // neutral
+                    break;
+                default: 
+                    SetFace(1); // glücklich
+                    break;
+            }
+        }
+        else
+        {
+            SetFace(2); // neutral
+        }
+    }
+
+    private void SetFace(int FaceNr)
+    {
+        Renderer planeRenderer = screen.GetComponent<Renderer>();
+        planeRenderer.material.mainTexture = _imgs[FaceNr];
+    }
+
+    // Aktuell nur Best of 5
+    private void wincheck()
+    {
+        if (botPoints == 3)
+        {
+            matchPoints.text = "BOT WIN";
+            _porcupineManager.Stop();
+        }
+        else if (playerPoints == 3)
+        {
+            matchPoints.text = "PLAYER WIN";
+            _porcupineManager.Stop();
+        }
+    }
 
     // Update is called once per frame
     void Update()
