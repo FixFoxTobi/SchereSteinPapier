@@ -12,11 +12,11 @@ using System.IO;
 public class SSPGameplay : MonoBehaviour
 {
     private const string ACCESS_KEY = "${YOUR_ACCESS_KEY_HERE}"; // AccessKey obtained from Picovoice Console (https://console.picovoice.ai/)
+    
+    private static string basePath = Application.streamingAssetsPath;
+    private static List<string> keywordPaths = new List<string>() { basePath + "/Schere-Stein-Papier_de_windows_v3_0_0.ppn"}; // Liste mit Pfad zu allen erkennbaren Keywords/Wakewords
 
-    private static string basePath = Application.dataPath;
-    private static List<string> keywordPaths = new List<string>() { basePath + "/PorcupineFiles/Schere-Stein-Papier_de_windows_v3_0_0.ppn"}; // Liste mit Pfad zu allen erkennbaren Keywords/Wakewords
-
-    private string modelPath = basePath + "/PorcupineFiles/porcupine_params_de.pv"; // Pfad zum Deutschsprachigen Model
+    private string modelPath = basePath + "/porcupine_params_de.pv"; // Pfad zum Deutschsprachigen Model
 
     PorcupineManager _porcupineManager;
 
@@ -31,7 +31,6 @@ public class SSPGameplay : MonoBehaviour
 
     // Textfelder
     public TMP_Text gestureText;
-    public TMP_Text botText;
     public TMP_Text matchPoints;
     public TMP_Text outputText;
     
@@ -55,10 +54,6 @@ public class SSPGameplay : MonoBehaviour
             Debug.LogError("Screen and image component not assigned!");
         }
         if (gestureText == null)
-        {
-            Debug.LogError("TMP Text component is not assigned!");
-        }
-        if (botText == null)
         {
             Debug.LogError("TMP Text component is not assigned!");
         }
@@ -190,21 +185,7 @@ public class SSPGameplay : MonoBehaviour
                 return;
         }
 
-        // Ausgabe welche Geste der Computer gewählt hat
         botGesture = GetRandomGesture();
-        switch (botGesture)
-        {
-            case Gesture.Rock:
-                botText.text = "Rock";
-                break;
-            case Gesture.Paper:
-                botText.text = "Paper";
-                break;
-            case Gesture.Scissors:
-                botText.text = "Scissors";
-                break;
-        }
-
 
         if (currentGesture == botGesture)
         {
@@ -234,7 +215,6 @@ public class SSPGameplay : MonoBehaviour
     {
         gestureText.text = " ";
         outputText.text = " ";
-        botText.text = " ";
     }
 
     private Gesture GetRandomGesture()
