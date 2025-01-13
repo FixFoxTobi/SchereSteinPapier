@@ -11,9 +11,11 @@ using System.IO;
 
 public class SSPGameplay : MonoBehaviour
 {
-    private const string ACCESS_KEY = "${YOUR_ACCESS_KEY_HERE}"; // AccessKey obtained from Picovoice Console (https://console.picovoice.ai/)
-    
+    public TMP_Text AccessKeyText;
+
+
     private static string basePath = Application.streamingAssetsPath;
+
     private static List<string> keywordPaths = new List<string>() { basePath + "/Schere-Stein-Papier_de_windows_v3_0_0.ppn"}; // Liste mit Pfad zu allen erkennbaren Keywords/Wakewords
 
     private string modelPath = basePath + "/porcupine_params_de.pv"; // Pfad zum Deutschsprachigen Model
@@ -33,7 +35,8 @@ public class SSPGameplay : MonoBehaviour
     public TMP_Text gestureText;
     public TMP_Text matchPoints;
     public TMP_Text outputText;
-    
+    public TMP_Text debugText;
+
     // Bildschirm ausgabe
     public Texture[] _imgs;
     public GameObject screen;
@@ -44,8 +47,8 @@ public class SSPGameplay : MonoBehaviour
 
     private System.Random random = new System.Random(); 
 
-    // Start is called before the first frame update
-    void Start()
+    // StartGane is called after successfully entering an access key
+    public void StartGame(string ACCESS_KEY)
     {
         leapController = new Controller();
 
@@ -111,9 +114,15 @@ public class SSPGameplay : MonoBehaviour
         {
             Debug.LogError($"Porcupine initialization error: {ex.Message}");
         }
+
+        SetFace(0); //turn on Screen
     }
 
-   
+    public void SetPorcupineManager(PorcupineManager manager)
+    {
+        _porcupineManager = manager;
+    }
+
     private void OnWakeWordDetected(int keywordIndex)
     {
 
@@ -132,6 +141,7 @@ public class SSPGameplay : MonoBehaviour
             }
         }
     }
+
     private Gesture DetectGesture(Hand hand) // Gestenerkennungsfunktion
     {
         int extendedFingers = 0;
