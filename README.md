@@ -9,8 +9,21 @@
 
 
 ### Vorraussetzung
+- **Windows 10** oder höher (andere Betriebssysteme werden in der Ready-to-Use Ausführung nicht unterstützt)
+- Leap Motion Controller mit installierten Treibern
+- Ein gültiger Account bei [Picovoice](https://picovoice.ai) zur Nutzung der Sprachsteuerungsfunktionen
 
 ### Installation
+
+1. **Leap Motion Treiber installieren**
+   - Laden Sie die Leap Motion Treiber von der offiziellen [Website](https://leap2.ultraleap.com/downloads/leap-motion-controller/)(Account erforderlich) oder aus dem Git Repository herunter und installieren Sie diesen
+   
+2. **Picovoice-Account erstellen**
+   - Registrieren Sie sich auf [Picovoice](https://picovoice.ai) 
+   - Ein AccessKey (später benötigt) wird automatisch generiert
+
+3. **Projekt herunterladen**
+
 
 ## Dokumentation 
 ### AMITUDE
@@ -27,7 +40,7 @@
 | **Where**       | <div style ="text-align:justify">Die Interaktion findet in einer ruhigen, kontrollierten Umgebung statt, beispielsweise in einem privaten Raum oder in einem Labor. Der Desktop-PC, der als zentrales Element des Systems dient, steht auf einem stabilen Tisch, zusammen mit dem Leap Motion Controller, der so positioniert ist, dass er bequem die Handgesten des Spielers erfassen kann. Das Mikrofon ist ebenfalls in Reichweite, entweder integriert im Setup oder separat als Headset oder Tischmikrofon vorhanden. Die Lichtverhältnisse sind optimiert, um die Gestenerkennung zu unterstützen. Die Umgebung ist frei von lauten Geräuschen oder Ablenkungen, um die Spracherkennung nicht zu beeinträchtigen. Der Spieler sitzt oder steht bequem vor dem Setup, konzentriert sich ausschließlich auf das Spiel und hat keine weiteren Aufgaben oder Ablenkungen.</div>                                                                                                                                                                                                                                                                                                           |
 
 ### Storyboard
-![](Dokumentation/Pictures/Storyboard.png){width=70%}
+![](Dokumentation/Pictures/Storyboard.png)
 
 
 ### Quellen 
