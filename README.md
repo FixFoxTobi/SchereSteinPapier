@@ -4,7 +4,7 @@
 Das Projekt "Hands vs Hardware" wurde im Rahmen des Praktikums im Kurs Multimodale Mensch-Maschine-Interaktion an der HTW Dresden entwickelt und dient als Leistungserbringung für den genannten Kurs. Es lief lange unter dem Arbeitstitel "Schere-Stein-Papier – eine multimodale Umsetzung" und wurde zur Finalisierung mit seinem jetzigen Titel ausgestattet.
 
 ## Anleitung zur Installation und Ausführung
-### Vorraussetzung
+### Voraussetzung
 - **Windows 10** oder höher (andere Betriebssysteme werden in der Ready-to-Use Ausführung nicht unterstützt)
 - Leap Motion Controller mit installierten Treibern
 - Ein gültiger Account bei [Picovoice](https://picovoice.ai) zur Nutzung der Sprachsteuerungsfunktionen
@@ -12,16 +12,16 @@ Das Projekt "Hands vs Hardware" wurde im Rahmen des Praktikums im Kurs Multimoda
 ### Installation
 
 1. **Leap Motion Treiber installieren**
-   - Laden Sie die Leap Motion Treiber von der offiziellen [Website](https://leap2.ultraleap.com/downloads/leap-motion-controller/) (Account erforderlich) oder aus dem [Git Repository](LeapMotion-Treiber/Ultraleap-Hand-Tracking-Treiber.exe) herunter und installieren Sie diesen
+   - Laden Sie die Leap-Motion-Treiber von der offiziellen [Website](https://leap2.ultraleap.com/downloads/leap-motion-controller/) (Account erforderlich) herunter
    
 2. **Picovoice-Account erstellen**
    - Registrieren Sie sich auf [Picovoice](https://picovoice.ai) 
-   - Ein AccessKey (später benötigt) wird automatisch generiert
+   - Ein Access Key (später benötigt) wird automatisch generiert
 
 3. **Projekt herunterladen & starten**
    - Laden Sie den Ready-to-Use Ordner herunter
-   - Entpacken Sie die .zip Datei in ein gewünschtets verzeichnis 
-   - Im Ordner HandvsHardware finden sie eine gleichnamige .exe fürhen sie diese aus um das Spiel zu starten
+   - Entpacken Sie die .zip Datei in ein gewünschtes Verzeichnis 
+   - Im Ordner HandvsHardware finden sie eine gleichnamige .exe, fürhen Sie diese aus um das Spiel zu starten
 
 ## Dokumentation 
 ### AMITUDE - Modell
