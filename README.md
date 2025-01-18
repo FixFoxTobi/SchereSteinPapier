@@ -12,7 +12,7 @@ Das Projekt "Hands vs Hardware" wurde im Rahmen des Praktikums im Kurs Multimoda
 ### Installation
 
 1. **Leap Motion Treiber installieren**
-   - Laden Sie die Leap Motion Treiber von der offiziellen [Website](https://leap2.ultraleap.com/downloads/leap-motion-controller/) (Account erforderlich) oder aus dem Git Repository herunter und installieren Sie diesen
+   - Laden Sie die Leap Motion Treiber von der offiziellen [Website](https://leap2.ultraleap.com/downloads/leap-motion-controller/) (Account erforderlich) oder aus dem [Git Repository](LeapMotion-Treiber/Ultraleap-Hand-Tracking-Treiber.exe) herunter und installieren Sie diesen
    
 2. **Picovoice-Account erstellen**
    - Registrieren Sie sich auf [Picovoice](https://picovoice.ai) 
@@ -40,12 +40,12 @@ Das Projekt "Hands vs Hardware" wurde im Rahmen des Praktikums im Kurs Multimoda
 <br>
 
 ### Storyboard
-![](Dokumentation/Pictures/Storyboard.png)
+![Storyboard](Dokumentation/Pictures/Storyboard.png)
 
 <br>
 
 ### CARE - Modell
-![](Dokumentation/Pictures/CARE_Modell.png)
+![CARE-Modell](Dokumentation/Pictures/CARE_Modell.png)
 
 ### Ablaufplan
 #### Spiel
