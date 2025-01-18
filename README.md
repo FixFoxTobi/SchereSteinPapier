@@ -1,10 +1,7 @@
 
-
----in bearebitung
-
 # Hands vs Hardware
 
-## Anleitung zur Installation und Ausführun
+## Anleitung zur Installation und Ausführung
 ### Anmerkungen
 
 
@@ -16,21 +13,24 @@
 ### Installation
 
 1. **Leap Motion Treiber installieren**
-   - Laden Sie die Leap Motion Treiber von der offiziellen [Website](https://leap2.ultraleap.com/downloads/leap-motion-controller/)(Account erforderlich) oder aus dem Git Repository herunter und installieren Sie diesen
+   - Laden Sie die Leap Motion Treiber von der offiziellen [Website](https://leap2.ultraleap.com/downloads/leap-motion-controller/) (Account erforderlich) oder aus dem Git Repository herunter und installieren Sie diesen
    
 2. **Picovoice-Account erstellen**
    - Registrieren Sie sich auf [Picovoice](https://picovoice.ai) 
    - Ein AccessKey (später benötigt) wird automatisch generiert
 
-3. **Projekt herunterladen**
+3. **Projekt herunterladen & starten**
+   - Laden Sie den Ready-to-Use Ordner herunter
+   - Entpacken Sie die .zip Datei in ein gewünschtets verzeichnis 
+   - Im Ordner HandvsHardware finden sie eine gleichnamige .exe fürhen sie diese aus um das Spiel zu starten
 
 
 ## Dokumentation 
-### AMITUDE
+### AMITUDE - Modell
 
 **(A:)** Ein Schere-Stein-Papier-Spiel **(T:)** welches gegen einen Computer gespielt wird **(E:)** an einem privaten Gaming Setup **(I:)**(**(U:)** indem der Spieler **(M:)** durch sprechen bestimmter Keyworte **(D:)** in ein Mikrofon und **(M:)** bilden einer Spielgeste **(D:)** vor einem Leap Motion Controller Eingaben zur Steuerung des Spiels tätigt)
 
-### CROW
+### CROW - Modell
 
 | **Dimension** | **Beschreibung**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -42,6 +42,12 @@
 ### Storyboard
 ![](Dokumentation/Pictures/Storyboard.png)
 
+### CARE - Modell
+
+### Ablaufplane
+#### Spiel
+
+#### Emotionen Bot
 
 ### Quellen 
 #### Musik
