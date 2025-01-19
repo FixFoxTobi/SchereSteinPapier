@@ -5,6 +5,7 @@ using TMPro;
 using Pv;
 using Pv.Unity;
 using Leap.PhysicalHands;
+using Unity.VisualScripting;
 
 public class AccessKeyInput : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class AccessKeyInput : MonoBehaviour
     public GameObject uiOverlay_Game;
     public TMP_Text statusText;
     public SSPGameplay gameScript;
+    public Light screenLight;
+
     PorcupineManager porcupine;
 
     private static string basePath = Application.streamingAssetsPath;
@@ -40,8 +43,10 @@ public class AccessKeyInput : MonoBehaviour
                 Debug.Log("Access Key ist gültig!");
                 uiOverlay_Key.SetActive(false); // AccessKey Overlay ausblenden
                 // noch gegen MenuOverlay austauschen
-                uiOverlay_Game.SetActive(true); // Game Overlay einblenden
+                uiOverlay_Menu.SetActive(true); // Game Overlay einblenden
                 gameScript.StartGame(AccessKey.text);
+                screenLight.color = new Color(0.149f, 0.769f, 0.576f);
+                screenLight.intensity = 1.5f;
             }
         }
         catch (PorcupineInvalidArgumentException e)
