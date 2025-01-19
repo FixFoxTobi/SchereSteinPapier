@@ -5,7 +5,7 @@ Das Projekt "Hands vs Hardware" wurde im Rahmen des Praktikums im Kurs Multimoda
 
 ## Anleitung zur Installation und Ausführung
 ### Voraussetzung
-- **Windows 10** oder höher (andere Betriebssysteme werden in der Ready-to-Use Ausführung nicht unterstützt)
+- **Windows 10** oder höher (andere Betriebssysteme wurden als Ready-to-Use Ausführung nicht erstellt/getestet)
 - Leap Motion Controller mit installierten Treibern
 - Ein gültiger Account bei [Picovoice](https://picovoice.ai) zur Nutzung der Sprachsteuerungsfunktionen
 
