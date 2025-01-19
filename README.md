@@ -13,7 +13,8 @@ Das Projekt "Hands vs Hardware" wurde im Rahmen des Praktikums im Kurs Multimoda
 
 1. **Leap Motion Treiber installieren**
    - Laden Sie die Leap-Motion-Treiber von der offiziellen [Website](https://leap2.ultraleap.com/downloads/leap-motion-controller/) (Account erforderlich) herunter
-   
+   - Installieren Sie den Treiber
+
 2. **Picovoice-Account erstellen**
    - Registrieren Sie sich auf [Picovoice](https://picovoice.ai) 
    - Ein Access Key (später benötigt) wird automatisch generiert
