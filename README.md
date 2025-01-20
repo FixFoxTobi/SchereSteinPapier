@@ -1,7 +1,10 @@
 
 # Hands vs Hardware
 
+Bei „Hand vs Hardware“ handelt es sich um ein Videospiel, das von klassischen Steuerungen abweicht und auf Motion-Capturing sowie Audioerkennung setzt. Es soll zeigen, welche Alternativen es zur Standard-Eingabe mit Maus und Tastatur gibt. Um den vollen Fokus darauf zu legen, bedient sich „Hand vs Hardware“ des Spiels „Schere, Stein, Papier“, das den meisten bekannt sein dürfte. Per Sprachbefehl wird durch Menüs gesteuert und Runden gestartet. Mit Gesten werden die gewünschten Objekte (Schere, Stein, Papier) geformt, um gegen einen Bot zu spielen.
+
 Das Projekt "Hands vs Hardware" wurde im Rahmen des Praktikums im Kurs Multimodale Mensch-Maschine-Interaktion an der HTW Dresden entwickelt und dient als Leistungserbringung für den genannten Kurs. Es lief lange unter dem Arbeitstitel "Schere-Stein-Papier – eine multimodale Umsetzung" und wurde zur Finalisierung mit seinem jetzigen Titel ausgestattet.
+
 
 ## Anleitung zur Installation und Ausführung
 ### Voraussetzung
