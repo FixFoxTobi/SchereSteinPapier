@@ -54,8 +54,8 @@ Das Projekt "Hands vs Hardware" wurde im Rahmen des Praktikums im Kurs Multimoda
 ### Spiel-Ablaufplan
 ![CARE-Modell](Dokumentation/Pictures/Ablaufplan_Programm.png)
 
-### Quellen 
-#### Musik
+## Quellen 
+### Musik
    - ???
 
 
