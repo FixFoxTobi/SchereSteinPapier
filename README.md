@@ -51,10 +51,7 @@ Das Projekt "Hands vs Hardware" wurde im Rahmen des Praktikums im Kurs Multimoda
 ### CARE - Modell
 ![CARE-Modell](Dokumentation/Pictures/CARE_Modell.png)
 
-### Ablaufplan
-#### Spiel
-
-#### Emotionen Bot
+### Spiel-Ablaufplan
 
 ### Quellen 
 #### Musik
@@ -62,4 +59,5 @@ Das Projekt "Hands vs Hardware" wurde im Rahmen des Praktikums im Kurs Multimoda
 
 
 
-> Ein Projekt von Tobias Friese, Gregor Hens und Markus Niebisch 
+> Ein Projekt von Tobias Friese, Gregor Hens und Markus Niebisch <br>
+   Großer Dank gilt Tobias Friese für die spezialisierte technische Umsetzung.
