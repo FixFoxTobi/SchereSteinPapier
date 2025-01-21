@@ -58,7 +58,7 @@ Das Projekt "Hands vs Hardware" wurde im Rahmen des Praktikums im Kurs Multimoda
 - Ambient Sounds von [Soundly](https://getsoundly.com)
 - 3D Modele von [Quixel](https://quixel.com/)
 
-
+<hr>
 
 > Ein Projekt von Tobias Friese, Gregor Hens und Markus Niebisch <br>
    Großer Dank gilt Tobias Friese für die spezialisierte technische Umsetzung.
