@@ -23,9 +23,9 @@ Das Projekt "Hands vs Hardware" wurde im Rahmen des Praktikums im Kurs Multimoda
    - Ein Access Key (später benötigt) wird automatisch generiert
 
 3. **Projekt herunterladen & starten**
-   - Laden Sie den Ready-to-Use Ordner herunter
+   - Laden Sie den ReadyToUse Ordner herunter
    - Entpacken Sie die .zip Datei in ein gewünschtes Verzeichnis 
-   - Im Ordner HandvsHardware finden sie eine gleichnamige .exe, fürhen Sie diese aus um das Spiel zu starten
+   - Im Ordner finden sie eine SchereSteinPapier.exe, führen Sie diese aus um das Spiel zu starten
 
 ## Dokumentation 
 ### AMITUDE - Modell
